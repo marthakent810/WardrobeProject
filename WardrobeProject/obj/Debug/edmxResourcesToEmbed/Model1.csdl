@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WardrobeProjectV2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Accessory">
+    <Key>
+      <PropertyRef Name="AccessoryID" />
+    </Key>
+    <Property Name="AccessoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="APhoto" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AColor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ASeason" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AOccasion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Bottom">
+    <Key>
+      <PropertyRef Name="BottomID" />
+    </Key>
+    <Property Name="BottomID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BPhoto" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BColor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BSeason" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BOccasion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Sho">
+    <Key>
+      <PropertyRef Name="ShoeID" />
+    </Key>
+    <Property Name="ShoeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SPhoto" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SColor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SSeason" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SOccasion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Top">
+    <Key>
+      <PropertyRef Name="TopId" />
+    </Key>
+    <Property Name="TopId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TPhoto" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TColor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TSeason" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TOccasion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="WardrobeProjectV2Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Accessories" EntityType="Self.Accessory" />
+    <EntitySet Name="Bottoms" EntityType="Self.Bottom" />
+    <EntitySet Name="Shoes" EntityType="Self.Sho" />
+    <EntitySet Name="Tops" EntityType="Self.Top" />
+  </EntityContainer>
+</Schema>
