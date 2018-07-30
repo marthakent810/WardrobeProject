@@ -3,61 +3,73 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Index</h2>
-
+<style>
+    /*set background color & image*/
+    body {
+        background-image: url("paper.gif");
+        background-color: lightgrey;
+    }
+</style>
+<h2>ACCESSORIES</h2>
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.AName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.APhoto)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AType)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AColor)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ASeason)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AOccasion)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
+<div class=container-fluid>
+    <div class="AccHead">
+        <div class=row>
+            <div class="col-2">
+                @Html.DisplayNameFor(model => model.AName)
+            </div>
+            <div class="col-2">
+                @Html.DisplayNameFor(model => model.AType)
+            </div>
+            <div class="col-1">
+                @Html.DisplayNameFor(model => model.AColor)
+            </div>
+            <div class="col-1">
+                @Html.DisplayNameFor(model => model.ASeason)
+            </div>
+            <div class="col-2">
+                @Html.DisplayNameFor(model => model.AOccasion)
+            </div>
+            <div class="col-4">
+                @Html.DisplayNameFor(model => model.APhoto)
+            </div>
+        </div>
+    </div>
+</div>
+
+@*loop to enter each accessory and print to screen*@
+@foreach (var item in Model)
+{
+    <div class="row">
+        <div class="col-2">
             @Html.DisplayFor(modelItem => item.AName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.APhoto)
-        </td>
-        <td>
+        </div>
+        <div class="col-2">
             @Html.DisplayFor(modelItem => item.AType)
-        </td>
-        <td>
+        </div>
+        <div class="col-1">
             @Html.DisplayFor(modelItem => item.AColor)
-        </td>
-        <td>
+        </div>
+        <div class="col-1">
             @Html.DisplayFor(modelItem => item.ASeason)
-        </td>
-        <td>
+        </div>
+        <div class="col-2">
             @Html.DisplayFor(modelItem => item.AOccasion)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.AccessoryID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.AccessoryID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.AccessoryID })
-        </td>
-    </tr>
+        </div>
+        <div class="col-2">
+            @*@Html.DisplayFor(modelItem => item.APhoto)*@
+            <img src="~/Images/@Html.DisplayFor(modelItem => item.APhoto)" style="width:75px;" />
+        </div>
+
+        <div class="col-2">
+            @Html.ActionLink("Edit", "Edit", new { id = item.AccessoryID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.AccessoryID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.AccessoryID })
+        </div>
+    </div>
+
 }
 
-</table>

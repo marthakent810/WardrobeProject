@@ -3,61 +3,72 @@
 @{
     ViewBag.Title = "Index";
 }
+<style>
+    /*set background color & image*/
+    body {
+        background-image: url("paper.gif");
+        background-color: lightgrey;
+    }
+</style>
 
-<h2>Index</h2>
+<h2>BOTTOMS</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.BName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BPhoto)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BType)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BColor)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BSeason)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BOccasion)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.BName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BPhoto)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BType)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BColor)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BSeason)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BOccasion)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.BottomID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.BottomID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.BottomID })
-        </td>
-    </tr>
+<div class=container-fluid>
+    <div class="AccHead">
+        <div class=row>
+            <div class="col-1">
+                @Html.DisplayNameFor(model => model.BName)
+            </div>
+            <div class="col-2">
+                @Html.DisplayNameFor(model => model.BPhoto)
+            </div>
+            <div class="col-2">
+                @Html.DisplayNameFor(model => model.BType)
+            </div>
+            <div class="col-2">
+                @Html.DisplayNameFor(model => model.BColor)
+            </div>
+            <div class="col-2">
+                @Html.DisplayNameFor(model => model.BSeason)
+            </div>
+            <div class="col-1">
+                @Html.DisplayNameFor(model => model.BOccasion)
+            </div>
+        </div>
+    </div>
+</div>
+
+@*loop to enter each review and print to screen*@
+@foreach (var item in Model)
+{
+<div class="row">
+    <div class="col-1">
+        @Html.DisplayFor(modelItem => item.BName)
+    </div>
+    <div class="col-2">
+        <img src="~/Images/@Html.DisplayFor(modelItem => item.BPhoto)" style="width:75px;" />
+    </div>
+    <div class="col-2">
+        @Html.DisplayFor(modelItem => item.BType)
+    </div>
+    <div class="col-2">
+        @Html.DisplayFor(modelItem => item.BColor)
+    </div>
+    <div class="col-2">
+        @Html.DisplayFor(modelItem => item.BSeason)
+    </div>
+    <div class="col-1">
+        @Html.DisplayFor(modelItem => item.BOccasion)
+    </div>
+    <div class="col-2">
+        @Html.ActionLink("Edit", "Edit", new { id = item.BottomID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.BottomID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.BottomID })
+    </div>
+</div>
 }
 
-</table>

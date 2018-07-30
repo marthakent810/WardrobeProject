@@ -1,63 +1,73 @@
 ﻿@model IEnumerable<WardrobeProject.Sho>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "SHOES";
 }
+<style>
+    /*set background color & image*/
+    body {
+        background-image: url("paper.gif");
+        background-color: lightgrey;
+    }
+</style>
 
-<h2>Index</h2>
+<h2>SHOES</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.SName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SPhoto)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SType)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SColor)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SSeason)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SOccasion)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.SName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SPhoto)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SType)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SColor)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SSeason)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SOccasion)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ShoeID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ShoeID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ShoeID })
-        </td>
-    </tr>
+<div class=container-fluid>
+    <div class="AccHead">
+        <div class=row>
+            <div class="col-1">
+                @Html.DisplayNameFor(model => model.SName)
+            </div>
+            <div class="col-2">
+                @Html.DisplayNameFor(model => model.SPhoto)
+            </div>
+            <div class="col-2">
+                @Html.DisplayNameFor(model => model.SType)
+            </div>
+            <div class="col-2">
+                @Html.DisplayNameFor(model => model.SColor)
+            </div>
+            <div class="col-2">
+                @Html.DisplayNameFor(model => model.SSeason)
+            </div>
+            <div class="col-1">
+                @Html.DisplayNameFor(model => model.SOccasion)
+            </div>
+        </div>
+    </div>
+</div>
+
+@*loop to enter each review and print to screen*@
+@foreach (var item in Model)
+{
+<div class="row">
+    <div class="col-1">
+        @Html.DisplayFor(modelItem => item.SName)
+    </div>
+    <div class="col-2">
+        <img src="~/Images/@Html.DisplayFor(modelItem => item.SPhoto)" style="width:75px;" />
+        </div>
+    <div class="col-2">
+        @Html.DisplayFor(modelItem => item.SType)
+    </div>
+    <div class="col-2">
+        @Html.DisplayFor(modelItem => item.SColor)
+    </div>
+    <div class="col-2">
+        @Html.DisplayFor(modelItem => item.SSeason)
+    </div>
+    <div class="col-2">
+        @Html.DisplayFor(modelItem => item.SOccasion)
+    </div>
+    <div class="col-2">
+        @Html.ActionLink("Edit", "Edit", new { id = item.ShoeID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.ShoeID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.ShoeID })
+    </div>
+</div>
 }
-
-</table>

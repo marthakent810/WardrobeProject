@@ -134,6 +134,7 @@ a {
   color: #007bff;
   text-decoration: none;
   background-color: transparent;
+  margin:50px;
   -webkit-text-decoration-skip: objects;
 }
 

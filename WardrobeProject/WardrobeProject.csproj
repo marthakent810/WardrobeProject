@@ -225,8 +225,12 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Accessory.cs" />
+    <Compile Include="Models\Bottom.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Sho.cs" />
+    <Compile Include="Models\Top.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sho.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -249,6 +253,16 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\accessories.jpg" />
+    <Content Include="Images\blouses.jpg" />
+    <Content Include="Images\pants.jpg" />
+    <Content Include="Images\runway.jpg" />
+    <Content Include="Images\shoes.jpg" />
+    <Content Include="Images\w-blackflat.jpg" />
+    <Content Include="Images\w-redshorts.jpg" />
+    <Content Include="Images\w-rustblouse.jpg" />
+    <Content Include="Images\w-tanpurse.jpg" />
+    <Content Include="Images\wardrobe.jpg" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>

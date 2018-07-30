@@ -3,64 +3,53 @@
 @{
     ViewBag.Title = "Details";
 }
+<style>
+    /*set background color & image*/
+    body {
+        background-image: url("paper.gif");
+        background-color: orchid;
+    }
+</style>
 
-<h2>Details</h2>
-
+<h2>TOPS</h2>
 <div>
-    <h4>Top</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.TName)
-        </dt>
+    <h4>DETAILS</h4>
+    <div class-="container">
+        <div class="row">
+            <div class="col-4">
+                <h5> @Html.DisplayNameFor(model => model.TName)</h5>
+                <p>  @Html.DisplayFor(model => model.TName)</p>
+                <p>   @Html.DisplayFor(model => model.TPhoto)</p></p>
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.TName)
-        </dd>
+            <div class="col-4">
+                <h5> @Html.DisplayNameFor(model => model.TType)</h5>
+                <p>@Html.DisplayFor(model => model.TType)</p>
+                <br>
+                <br>
+                <h5> @Html.DisplayNameFor(model => model.TColor)</h5>
+                <p> @Html.DisplayFor(model => model.TColor)</p>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TPhoto)
-        </dt>
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.TPhoto)
-        </dd>
+            <div class="col-4">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TType)
-        </dt>
+                <h5> @Html.DisplayNameFor(model => model.TSeason)</h5>
+                <p> @Html.DisplayFor(model => model.TSeason)</p>
+                <br>
+                <br>
+                <h5> @Html.DisplayNameFor(model => model.TOccasion)</h5>
+                <p> @Html.DisplayFor(model => model.TOccasion)</p>
+            </div>
+            <div>
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.TType)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TColor)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TColor)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TSeason)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TSeason)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TOccasion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TOccasion)
-        </dd>
-
-    </dl>
+        </div>
+    </div>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.TopId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+
+

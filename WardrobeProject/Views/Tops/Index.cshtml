@@ -3,61 +3,71 @@
 @{
     ViewBag.Title = "Index";
 }
+<style>
+    /*set background color & image*/
+    body {
+        background-image: url("paper.gif");
+        background-color: lightgrey;
+    }
+</style>
 
-<h2>Index</h2>
+<h2>TOPS</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.TName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TPhoto)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TType)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TColor)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TSeason)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TOccasion)
-        </th>
-        <th></th>
-    </tr>
+<div class=container-fluid>
+    <div class="AccHead">
+        <div class=row>
+            <div class="col-1">
+                @Html.DisplayNameFor(model => model.TName)
+            </div>
+            <div class="col-2">
+                @Html.DisplayNameFor(model => model.TPhoto)
+            </div>
+            <div class="col-2">
+                @Html.DisplayNameFor(model => model.TType)
+            </div>
+            <div class="col-2">
+                @Html.DisplayNameFor(model => model.TColor)
+            </div>
+            <div class="col-2">
+                @Html.DisplayNameFor(model => model.TSeason)
+            </div>
+            <div class="col-1">
+                @Html.DisplayNameFor(model => model.TOccasion)
+            </div>
+        </div>
+    </div>
+</div>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TPhoto)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TType)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TColor)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TSeason)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TOccasion)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.TopId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.TopId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.TopId })
-        </td>
-    </tr>
+@*loop to enter each review and print to screen*@
+@foreach (var item in Model)
+{
+<div class="row">
+    <div class="col-1">
+        @Html.DisplayFor(modelItem => item.TName)
+    </div>
+    <div class="col-2">
+        <img src="~/Images/@Html.DisplayFor(modelItem => item.TPhoto)" style="width:75px;" />
+        </div>
+    <div class="col-2">
+        @Html.DisplayFor(modelItem => item.TType)
+    </div>
+    <div class="col-2">
+        @Html.DisplayFor(modelItem => item.TColor)
+    </div>
+    <div class="col-2">
+        @Html.DisplayFor(modelItem => item.TSeason)
+    </div>
+    <div class="col-1">
+        @Html.DisplayFor(modelItem => item.TOccasion)
+    </div>
+
+    <div class="col-2">
+        @Html.ActionLink("Edit", "Edit", new { id = item.TopId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.TopId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.TopId })
+    </div>
+</div>
 }
-
-</table>
